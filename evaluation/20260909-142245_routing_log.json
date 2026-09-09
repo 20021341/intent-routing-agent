@@ -1,0 +1,321 @@
+{
+  "total": 20,
+  "correct": 18,
+  "by_category": {
+    "knowledge": {
+      "correct": 5,
+      "total": 5
+    },
+    "calculation": {
+      "correct": 5,
+      "total": 5
+    },
+    "out_of_scope": {
+      "correct": 5,
+      "total": 5
+    },
+    "ambiguous": {
+      "correct": 3,
+      "total": 5
+    }
+  },
+  "results": [
+    {
+      "index": 1,
+      "category": "knowledge",
+      "question": "Thủ đô của Nhật Bản là gì?",
+      "expected_intent": "knowledge",
+      "actual_intent": "knowledge",
+      "routed_correctly": true,
+      "answer": "Thủ đô của Nhật Bản là Tokyo.",
+      "trace": [
+        "classify_intent -> knowledge",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 2,
+      "category": "knowledge",
+      "question": "Ai là người sáng lập ra Microsoft?",
+      "expected_intent": "knowledge",
+      "actual_intent": "knowledge",
+      "routed_correctly": true,
+      "answer": "Microsoft được sáng lập bởi Bill Gates và Paul Allen vào ngày 4 tháng 4 năm 1975.",
+      "trace": [
+        "classify_intent -> knowledge",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 3,
+      "category": "knowledge",
+      "question": "Ngôn ngữ lập trình Python được phát hành lần đầu năm nào?",
+      "expected_intent": "knowledge",
+      "actual_intent": "knowledge",
+      "routed_correctly": true,
+      "answer": "Ngôn ngữ lập trình Python được phát hành lần đầu vào tháng 12 năm 1989. Tuy nhiên, phiên bản chính thức đầu tiên, Python 2.0, được phát hành vào ngày 16 tháng 10 năm 2000. \n\nNguồn: [History of Python](https://en.wikipedia.org/wiki/History_of_Python)",
+      "trace": [
+        "classify_intent -> knowledge",
+        "tool_call wikipedia_search({'query': 'Python programming language release date'}) -> The programming language Python was conceived in the late 1980s, and its implementation was started in December 1989 by Guido van Rossum at CWI in the Netherlands as a successor to ABC capable of exception handling and interfacing with the Amoeba operating system. Van Rossum was Python's principal author and had a central role in deciding the direction of Python (as reflected in the title given to him by the Python community, Benevolent Dictator for Life (BDFL)) until stepping down as leader on July 12, 2018. Python was named after the BBC TV show Monty Python's Flying Circus.\nPython 2.0 was released on October 16, 2000, with many major new features, such as list comprehensions, cycle-detecting garbage collector, reference counting, memory management and support for Unicode, along with a change to the development process itself, with a shift to a more transparent and community-backed process.\nPython 3.0, a major, backwards-incompatible release, was released on December 3, 2008 after a long period of testing.\nNguồn: History of Python (https://en.wikipedia.org/wiki/History_of_Python)",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 4,
+      "category": "knowledge",
+      "question": "Sông dài nhất thế giới là sông nào?",
+      "expected_intent": "knowledge",
+      "actual_intent": "knowledge",
+      "routed_correctly": true,
+      "answer": "Sông dài nhất thế giới là sông Nile, với chiều dài khoảng 6,650 km. Nguồn: [List of river systems by length](https://en.wikipedia.org/wiki/List_of_river_systems_by_length).",
+      "trace": [
+        "classify_intent -> knowledge",
+        "tool_call wikipedia_search({'query': 'longest river in the world'}) -> This is a list of the longest rivers on Earth. It includes river systems over 1,000 kilometres (620 mi) in length.\nNguồn: List of river systems by length (https://en.wikipedia.org/wiki/List_of_river_systems_by_length)",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 5,
+      "category": "knowledge",
+      "question": "Giải thích ngắn gọn thuyết tương đối hẹp của Einstein là gì?",
+      "expected_intent": "knowledge",
+      "actual_intent": "knowledge",
+      "routed_correctly": true,
+      "answer": "Thuyết tương đối hẹp của Einstein, được công bố vào năm 1905, là một lý thuyết vật lý mô tả cách mà không gian và thời gian liên kết với nhau trong các hệ quy chiếu chuyển động với vận tốc không đổi. Hai nguyên lý chính của thuyết này là:\n\n1. **Nguyên lý tương đối**: Các định luật vật lý giống nhau trong mọi hệ quy chiếu quán tính, nghĩa là không có hệ quy chiếu nào là \"đặc biệt\" hơn hệ khác.\n2. **Tốc độ ánh sáng**: Tốc độ ánh sáng trong chân không là hằng số và không phụ thuộc vào chuyển động của nguồn sáng hay người quan sát.\n\nThuyết này dẫn đến nhiều hệ quả quan trọng, như sự co rút chiều dài, sự giãn nở thời gian và mối quan hệ giữa khối lượng và năng lượng (E=mc²).",
+      "trace": [
+        "classify_intent -> knowledge",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 6,
+      "category": "calculation",
+      "question": "Một cửa hàng sách buổi sáng bán được 125 cuốn, buổi chiều bán được nhiều hơn buổi sáng 250 cuốn. Hỏi cả ngày cửa hàng bán được bao nhiêu cuốn sách?",
+      "expected_intent": "calculation",
+      "actual_intent": "calculation",
+      "routed_correctly": true,
+      "answer": "Cả ngày cửa hàng bán được 500 cuốn sách.",
+      "trace": [
+        "classify_intent -> calculation",
+        "tool_call add({'a': 125, 'b': 250}) -> 375.0",
+        "tool_call add({'a': 125, 'b': 0}) -> 125.0",
+        "tool_call add({'a': 375, 'b': 125}) -> 500.0",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 7,
+      "category": "calculation",
+      "question": "Một xưởng may nhập về 900 mét vải, đã dùng hết 356 mét để may cho đơn hàng thứ nhất. Số vải còn lại được chia đều để may cho 4 đơn hàng tiếp theo. Hỏi mỗi đơn hàng tiếp theo được cấp bao nhiêu mét vải?",
+      "expected_intent": "calculation",
+      "actual_intent": "calculation",
+      "routed_correctly": true,
+      "answer": "Mỗi đơn hàng tiếp theo được cấp 136 mét vải.",
+      "trace": [
+        "classify_intent -> calculation",
+        "tool_call subtract({'a': 900, 'b': 356}) -> 544.0",
+        "tool_call divide({'a': 544, 'b': 4}) -> 136.0",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 8,
+      "category": "calculation",
+      "question": "Một rạp chiếu phim có 17 hàng ghế, mỗi hàng xếp được 23 ghế. Hỏi rạp có tổng cộng bao nhiêu ghế?",
+      "expected_intent": "calculation",
+      "actual_intent": "calculation",
+      "routed_correctly": true,
+      "answer": "Rạp chiếu phim có tổng cộng 391 ghế.",
+      "trace": [
+        "classify_intent -> calculation",
+        "tool_call multiply({'a': 17, 'b': 23}) -> 391.0",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 9,
+      "category": "calculation",
+      "question": "Một nhà máy sản xuất được 48 sản phẩm mỗi giờ và hoạt động liên tục 7 giờ mỗi ngày trong 3 ngày liên tiếp. Hỏi sau 3 ngày đó nhà máy sản xuất được bao nhiêu sản phẩm?",
+      "expected_intent": "calculation",
+      "actual_intent": "calculation",
+      "routed_correctly": true,
+      "answer": "Sau 3 ngày, nhà máy sản xuất được 1008 sản phẩm.",
+      "trace": [
+        "classify_intent -> calculation",
+        "tool_call multiply({'a': 48, 'b': 7}) -> 336.0",
+        "tool_call multiply({'a': 48, 'b': 3}) -> 144.0",
+        "tool_call multiply({'a': 336, 'b': 3}) -> 1008.0",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 10,
+      "category": "calculation",
+      "question": "Một bể chứa có 200 lít nước, sau đó người ta rút bớt 50 lít để tưới cây. Lượng nước còn lại được chia đều vào 3 bình chứa nhỏ. Nếu rót thêm nước sao cho lượng nước trong mỗi bình tăng lên gấp 6 lần so với lúc vừa chia xong, hỏi mỗi bình chứa bao nhiêu lít nước sau khi rót thêm?",
+      "expected_intent": "calculation",
+      "actual_intent": "calculation",
+      "routed_correctly": true,
+      "answer": "Mỗi bình chứa sẽ có 300 lít nước sau khi rót thêm.",
+      "trace": [
+        "classify_intent -> calculation",
+        "tool_call subtract({'a': 200, 'b': 50}) -> 150.0",
+        "tool_call divide({'a': 150, 'b': 3}) -> 50.0",
+        "tool_call multiply({'a': 50, 'b': 6}) -> 300.0",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 11,
+      "category": "out_of_scope",
+      "question": "Chào bạn, dạo này bạn thế nào?",
+      "expected_intent": "out_of_scope",
+      "actual_intent": "out_of_scope",
+      "routed_correctly": true,
+      "answer": "Xin chào! Tôi chỉ hỗ trợ các yêu cầu về hỏi đáp kiến thức và tính toán số học. Nếu bạn có câu hỏi nào trong hai lĩnh vực đó, hãy cho tôi biết nhé!",
+      "trace": [
+        "classify_intent -> out_of_scope",
+        "out_of_scope_node -> declined"
+      ],
+      "error": null
+    },
+    {
+      "index": 12,
+      "category": "out_of_scope",
+      "question": "Viết giúp mình một đoạn code Python tính dãy Fibonacci.",
+      "expected_intent": "out_of_scope",
+      "actual_intent": "out_of_scope",
+      "routed_correctly": true,
+      "answer": "Xin lỗi, nhưng tôi chỉ hỗ trợ hai loại yêu cầu: hỏi đáp kiến thức và tính toán số học. Nếu bạn có câu hỏi nào trong hai lĩnh vực đó, tôi rất sẵn lòng giúp đỡ!",
+      "trace": [
+        "classify_intent -> out_of_scope",
+        "out_of_scope_node -> declined"
+      ],
+      "error": null
+    },
+    {
+      "index": 13,
+      "category": "out_of_scope",
+      "question": "Thủ đô của Nhật Bản là gì và 125 nhân 7 bằng bao nhiêu?",
+      "expected_intent": "out_of_scope",
+      "actual_intent": "out_of_scope",
+      "routed_correctly": true,
+      "answer": "Thủ đô của Nhật Bản là Tokyo. Còn 125 nhân 7 bằng 875.",
+      "trace": [
+        "classify_intent -> out_of_scope",
+        "out_of_scope_node -> declined"
+      ],
+      "error": null
+    },
+    {
+      "index": 14,
+      "category": "out_of_scope",
+      "question": "Bạn dịch giúp mình câu này sang tiếng Anh: Hôm nay trời đẹp.",
+      "expected_intent": "out_of_scope",
+      "actual_intent": "out_of_scope",
+      "routed_correctly": true,
+      "answer": "Xin lỗi, nhưng tôi chỉ hỗ trợ hai loại yêu cầu: hỏi đáp kiến thức và tính toán số học. Bạn có thể hỏi về một trong hai loại đó không?",
+      "trace": [
+        "classify_intent -> out_of_scope",
+        "out_of_scope_node -> declined"
+      ],
+      "error": null
+    },
+    {
+      "index": 15,
+      "category": "out_of_scope",
+      "question": "Cho mình lời khuyên nên đầu tư vào cổ phiếu nào bây giờ?",
+      "expected_intent": "out_of_scope",
+      "actual_intent": "out_of_scope",
+      "routed_correctly": true,
+      "answer": "Xin lỗi, nhưng tôi chỉ hỗ trợ các yêu cầu liên quan đến hỏi đáp kiến thức và tính toán số học. Tôi không thể đưa ra lời khuyên đầu tư.",
+      "trace": [
+        "classify_intent -> out_of_scope",
+        "out_of_scope_node -> declined"
+      ],
+      "error": null
+    },
+    {
+      "index": 16,
+      "category": "ambiguous",
+      "question": "Máy bay Boeing 747-400 có chiều dài thân 70,7 mét, sải cánh 64,4 mét, cao 19,4 mét, trọng lượng cất cánh tối đa gần 397 tấn, sức chứa khoảng 416 hành khách ở cấu hình ba hạng, được trang bị bốn động cơ và từng là biểu tượng của hàng không dân dụng suốt nhiều thập kỷ. Công trình này trải qua hàng nghìn giờ bay thử nghiệm trước khi đi vào khai thác thương mại. Khi hoàn thiện phần chú thích kỹ thuật cho một triển lãm lịch sử hàng không, vẫn còn thiếu thông tin về diện tích mặt sàn dành cho hành khách.",
+      "expected_intent": "calculation",
+      "actual_intent": "knowledge",
+      "routed_correctly": false,
+      "answer": "Tôi không tìm thấy thông tin về diện tích mặt sàn dành cho hành khách của máy bay Boeing 747-400. Nếu bạn cần thêm thông tin khác, hãy cho tôi biết!",
+      "trace": [
+        "classify_intent -> knowledge",
+        "tool_call wikipedia_search({'query': 'Boeing 747-400 passenger floor area'}) -> The Boeing 747-400 is a large, long-range wide-body airliner produced by Boeing Commercial Airplanes, as an advanced version of the original Boeing 747.\nThe model, first introduced as the Advanced Series 300, was announced at the September 1984 Farnborough Airshow, targeting a 10% cost reduction with more efficient engines and 1,000 nautical miles [nmi] (1,900 km; 1,200 mi) range increase. Northwest Airlines became the launch customer with an order for ten aircraft on October 22, 1985. The first 747-400 was rolled out on January 26, 1988, made its maiden flight on April 29, 1988, received type certification on January 9, 1989, and entered service with Northwest a month later on February 9, 1989.\nIt retains the 747 airframe, including the 747-300 stretched upper deck, with 6-foot (1.8 m) winglets.\nNguồn: Boeing 747-400 (https://en.wikipedia.org/wiki/Boeing_747-400)",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 17,
+      "category": "ambiguous",
+      "question": "Tàu Titanic được đóng với chiều dài 269 mét, bề ngang 28 mét, cao 53 mét tính từ đáy tàu lên đỉnh ống khói, trọng tải đăng ký khoảng 46.000 tấn, có thể chở hơn 2.200 người, trang bị 16 phân khoang kín nước và bốn ống khói. Con tàu khởi hành chuyến đi đầu tiên vào mùa xuân năm 1912 và trở thành biểu tượng của thảm họa hàng hải. Trong phần ghi chú của một cuốn sách về lịch sử đóng tàu, dòng giới thiệu về người thiết kế chính của con tàu vẫn còn để trống.",
+      "expected_intent": "knowledge",
+      "actual_intent": "knowledge",
+      "routed_correctly": true,
+      "answer": "Người thiết kế chính của tàu Titanic là Thomas Andrews. Ông là một kỹ sư đóng tàu người Ireland và là giám đốc của Harland and Wolff, công ty chịu trách nhiệm đóng tàu Titanic. Andrews đã tham gia vào quá trình thiết kế và xây dựng con tàu này.",
+      "trace": [
+        "classify_intent -> knowledge",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 18,
+      "category": "ambiguous",
+      "question": "Cá voi xanh trưởng thành thường dài từ 25 đến 30 mét, nặng trung bình 150–200 tấn, có trái tim nặng gần 180 kg và lưỡi nặng tương đương một con voi châu Phi. Chúng có thể duy trì tốc độ tuần tra khoảng 20 km mỗi giờ khi di chuyển trên đại dương. Khi lập kế hoạch quan sát trên biển cho một nhóm nghiên cứu gồm 8 người, cần ước lượng thời gian để một cá thể bơi hết quãng đường 36 km với tốc độ tuần tra thông thường.",
+      "expected_intent": "calculation",
+      "actual_intent": "calculation",
+      "routed_correctly": true,
+      "answer": "Thời gian để một cá thể cá voi xanh bơi hết quãng đường 36 km với tốc độ 20 km/h là 1.8 giờ.",
+      "trace": [
+        "classify_intent -> calculation",
+        "tool_call divide({'a': 36, 'b': 20}) -> 1.8",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 19,
+      "category": "ambiguous",
+      "question": "Sứ mệnh Apollo 11 sử dụng tên lửa Saturn V cao 110,6 mét, nặng gần 3.000 tấn khi đầy nhiên liệu, đưa ba phi hành gia bay khoảng 384.000 km đến Mặt Trăng và trở về Trái Đất trong tổng cộng hơn 8 ngày. Module hạ cánh Eagle đã ở lại bề mặt Mặt Trăng khoảng 21 giờ rưỡi. Trong phần chú thích ảnh tại bảo tàng hàng không vũ trụ, dòng chữ nêu tên người đã đặt bước chân đầu tiên xuống bề mặt vệ tinh tự nhiên của Trái Đất vẫn chưa được điền.",
+      "expected_intent": "knowledge",
+      "actual_intent": "knowledge",
+      "routed_correctly": true,
+      "answer": "Người đã đặt bước chân đầu tiên xuống bề mặt Mặt Trăng trong sứ mệnh Apollo 11 là Neil Armstrong. Ông đã thực hiện bước đi lịch sử này vào ngày 20 tháng 7 năm 1969.",
+      "trace": [
+        "classify_intent -> knowledge",
+        "final_answer"
+      ],
+      "error": null
+    },
+    {
+      "index": 20,
+      "category": "ambiguous",
+      "question": "Sân vận động Maracanã tại Rio de Janeiro từng có sức chứa kỷ lục hơn 200.000 người vào giữa thế kỷ 20, hiện được cải tạo còn khoảng 78.800 chỗ ngồi, chu vi khán đài khoảng 900 mét, chiều cao mái che gần 30 mét và từng chứng kiến trận chung kết World Cup năm 1950. Công trình trải qua nhiều lần nâng cấp lớn. Khi soạn phần mô tả kỹ thuật cho tài liệu hướng dẫn tham quan, cần biết diện tích mặt sân bóng chính thức bên trong sân vận động.",
+      "expected_intent": "calculation",
+      "actual_intent": "knowledge",
+      "routed_correctly": false,
+      "answer": "Tôi không tìm thấy thông tin cụ thể về diện tích mặt sân bóng chính thức bên trong sân vận động Maracanã. Bạn có thể tham khảo thêm từ các nguồn khác hoặc trang web chính thức của sân vận động để có thông tin chi tiết hơn.",
+      "trace": [
+        "classify_intent -> knowledge",
+        "tool_call wikipedia_search({'query': 'Maracanã Stadium field dimensions'}) -> Central Dynamo Stadium was a stadium in Moscow, Russia. It was built in 1928 and held 36,540 people. It was the home ground for Dynamo Moscow.\nNguồn: Central Dynamo Stadium (https://en.wikipedia.org/wiki/Central_Dynamo_Stadium)",
+        "final_answer"
+      ],
+      "error": null
+    }
+  ]
+}

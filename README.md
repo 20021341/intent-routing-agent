@@ -26,7 +26,12 @@ python3 run_20_questions.py
 
 Script chạy 20 câu hỏi kiểm thử chia đều 4 nhóm (`knowledge`, `calculation`, `out_of_scope`, `ambiguous`), in log chi tiết ra terminal, và lưu kết quả đầy đủ vào `outputs/<timestamp>_routing_log.json`.
 
+## Kết quả kiểm thử
+
+Log đầy đủ của lần chạy dùng làm số liệu chính thức trong bài blog được commit tại [`evaluation/20260909-142245_routing_log.json`](evaluation/20260909-142245_routing_log.json) — gồm câu hỏi, nhãn kỳ vọng, nhãn thực tế, câu trả lời, và từng bước `trace` cho cả 20 câu (kể cả những câu đã đi đúng nhánh mà bài không in log chi tiết để đỡ dài). Thư mục `outputs/` sinh ra khi tự chạy lại không được commit, chỉ file trong `evaluation/` là bản tham chiếu.
+
 ## Cấu trúc
 
 - `intent_router_agent.py`: định nghĩa `State`, các tool, node phân loại, ba node xử lý, và `build_graph()`.
 - `run_20_questions.py`: bộ 20 câu hỏi kiểm thử và script chạy.
+- `evaluation/`: log kết quả chạy thật, dùng làm số liệu tham chiếu cho bài blog.

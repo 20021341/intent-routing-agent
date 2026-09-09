@@ -34,7 +34,9 @@ class AgentState(TypedDict):
 
 @tool
 def wikipedia_search(query: str) -> str:
-    """Tra cứu Wikipedia để lấy thông tin thực tế kèm nguồn trích dẫn, số liệu hoặc sự kiện cần kiểm chứng."""
+    """Tra cứu Wikipedia để lấy thông tin thực tế kèm nguồn trích dẫn, số liệu hoặc sự kiện cần kiểm chứng.
+    Wikipedia đang được cấu hình bằng tiếng Anh, nên query truyền vào phải luôn viết bằng tiếng Anh,
+    kể cả khi câu hỏi gốc là tiếng Việt."""
     try:
         page = wikipedia.page(query, auto_suggest=True)
     except wikipedia.exceptions.DisambiguationError as exc:

@@ -167,10 +167,12 @@ TEST_QUESTIONS = [
             "Sân vận động Maracanã tại Rio de Janeiro từng có sức chứa "
             "kỷ lục hơn 200.000 người vào giữa thế kỷ 20, hiện được cải "
             "tạo còn khoảng 78.800 chỗ ngồi, chu vi khán đài khoảng 900 mét, "
-            "chiều cao mái che gần 30 mét và từng chứng kiến trận chung kết "
-            "World Cup năm 1950. Công trình trải qua nhiều lần nâng cấp lớn. "
-            "Khi soạn phần mô tả kỹ thuật cho tài liệu hướng dẫn tham quan, "
-            "cần biết diện tích mặt sân bóng chính thức bên trong sân vận động."
+            "chiều cao mái che gần 30 mét, mặt sân thi đấu có chiều dài 105 "
+            "mét và chiều rộng 68 mét theo tiêu chuẩn FIFA, và từng chứng "
+            "kiến trận chung kết World Cup năm 1950. Công trình trải qua "
+            "nhiều lần nâng cấp lớn. Khi soạn phần mô tả kỹ thuật cho tài "
+            "liệu hướng dẫn tham quan, cần biết diện tích mặt sân bóng "
+            "chính thức bên trong sân vận động."
         ),
         "expected_intent": "calculation",
         "category": "ambiguous",

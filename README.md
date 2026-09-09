@@ -28,10 +28,10 @@ Script chạy 20 câu hỏi kiểm thử chia đều 4 nhóm (`knowledge`, `calc
 
 ## Kết quả kiểm thử
 
-Log đầy đủ của lần chạy dùng làm số liệu chính thức trong bài blog được commit tại [`evaluation/20260909-145838_routing_log.json`](evaluation/20260909-145838_routing_log.json) — gồm câu hỏi, nhãn kỳ vọng, nhãn thực tế, câu trả lời, và từng bước `trace` cho cả 20 câu (kể cả những câu đã đi đúng nhánh mà bài không in log chi tiết để đỡ dài). File `20260909-142245_routing_log.json` là lần chạy trước, giữ lại để đối chiếu lịch sử thay đổi system prompt. Thư mục `outputs/` sinh ra khi tự chạy lại không được commit, chỉ các file trong `evaluation/` là bản tham chiếu.
+Log đầy đủ của các lần chạy được commit trong `outputs/`, gồm câu hỏi, nhãn kỳ vọng, nhãn thực tế, câu trả lời, và từng bước `trace` cho cả 20 câu (kể cả những câu đã đi đúng nhánh mà bài không in log chi tiết để đỡ dài). File dùng làm số liệu chính thức trong bài blog là [`outputs/20260909-145838_routing_log.json`](outputs/20260909-145838_routing_log.json); file `20260909-142245_routing_log.json` là lần chạy trước, giữ lại để đối chiếu lịch sử thay đổi system prompt.
 
 ## Cấu trúc
 
 - `intent_router_agent.py`: định nghĩa `State`, các tool, node phân loại, ba node xử lý, và `build_graph()`.
 - `run_20_questions.py`: bộ 20 câu hỏi kiểm thử và script chạy.
-- `evaluation/`: log kết quả chạy thật, dùng làm số liệu tham chiếu cho bài blog.
+- `outputs/`: log kết quả các lần chạy thật, dùng làm số liệu tham chiếu cho bài blog.

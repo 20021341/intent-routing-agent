@@ -34,9 +34,7 @@ class AgentState(TypedDict):
 
 @tool
 def wikipedia_search(query: str) -> str:
-    """Tra cứu Wikipedia để lấy thông tin thực tế kèm nguồn trích dẫn, số liệu hoặc sự kiện cần kiểm chứng.
-    Wikipedia đang được cấu hình bằng tiếng Anh, nên query truyền vào phải luôn viết bằng tiếng Anh,
-    kể cả khi câu hỏi gốc là tiếng Việt."""
+    """Tra cứu Wikipedia để lấy thông tin thực tế kèm nguồn trích dẫn, số liệu hoặc sự kiện cần kiểm chứng."""
     try:
         page = wikipedia.page(query, auto_suggest=True)
     except wikipedia.exceptions.DisambiguationError as exc:
@@ -142,14 +140,16 @@ def _run_tool_loop(state: AgentState, tools: list, system_prompt: str) -> dict:
 
 def knowledge_node(state: AgentState) -> dict:
     system_prompt = (
-        "Bạn là trợ lý hỏi đáp kiến thức. Ưu tiên trả lời bằng kiến thức sẵn có của bạn. "
-        "Chỉ gọi công cụ wikipedia_search khi câu hỏi cần số liệu, ngày tháng hoặc sự kiện "
-        "cụ thể mà bạn không chắc chắn. Nếu đã gọi wikipedia_search nhưng kết quả trả về "
-        "không chứa thông tin cần thiết để trả lời, hãy nói rõ là bạn không tìm thấy thông "
-        "tin đó, tuyệt đối không tự suy đoán hay trả lời dựa trên kiến thức có sẵn của mình "
-        "trong trường hợp này. Nếu đã gọi wikipedia_search và tìm được thông tin phù hợp, "
-        "luôn nêu rõ nguồn (tên trang và URL) ở cuối câu trả lời. Trả lời ngắn gọn bằng "
-        "tiếng Việt."
+        "Bạn là trợ lý hỏi đáp kiến thức. Bắt buộc luôn gọi công cụ wikipedia_search "
+        "để tra cứu trước khi trả lời, tuyệt đối không được tự trả lời bằng kiến "
+        "thức có sẵn của mình. Nếu đã gọi wikipedia_search nhưng kết quả trả về "
+        "không chứa thông tin cần thiết để trả lời, hãy nói rõ là bạn không tìm "
+        "thấy thông tin đó, tuyệt đối không tự suy đoán hay trả lời dựa trên kiến "
+        "thức có sẵn của mình trong trường hợp này. Query truyền cho "
+        "wikipedia_search phải luôn viết bằng tiếng Anh, kể cả khi câu hỏi gốc là "
+        "tiếng Việt. Nếu đã gọi wikipedia_search và tìm được thông tin phù hợp, "
+        "luôn nêu rõ nguồn (tên trang và URL) ở cuối câu trả lời. Trả lời ngắn "
+        "gọn bằng tiếng Việt."
     )
     return _run_tool_loop(state, KNOWLEDGE_TOOLS, system_prompt)
 

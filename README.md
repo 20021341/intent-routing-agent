@@ -28,7 +28,7 @@ Script chạy 20 câu hỏi kiểm thử chia đều 4 nhóm (`knowledge`, `calc
 
 ## Kết quả kiểm thử
 
-Log đầy đủ của lần chạy dùng làm số liệu chính thức trong bài blog được commit tại [`evaluation/20260909-142245_routing_log.json`](evaluation/20260909-142245_routing_log.json) — gồm câu hỏi, nhãn kỳ vọng, nhãn thực tế, câu trả lời, và từng bước `trace` cho cả 20 câu (kể cả những câu đã đi đúng nhánh mà bài không in log chi tiết để đỡ dài). Thư mục `outputs/` sinh ra khi tự chạy lại không được commit, chỉ file trong `evaluation/` là bản tham chiếu.
+Log đầy đủ của lần chạy dùng làm số liệu chính thức trong bài blog được commit tại [`evaluation/20260909-145838_routing_log.json`](evaluation/20260909-145838_routing_log.json) — gồm câu hỏi, nhãn kỳ vọng, nhãn thực tế, câu trả lời, và từng bước `trace` cho cả 20 câu (kể cả những câu đã đi đúng nhánh mà bài không in log chi tiết để đỡ dài). File `20260909-142245_routing_log.json` là lần chạy trước, giữ lại để đối chiếu lịch sử thay đổi system prompt. Thư mục `outputs/` sinh ra khi tự chạy lại không được commit, chỉ các file trong `evaluation/` là bản tham chiếu.
 
 ## Cấu trúc
 
